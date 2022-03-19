@@ -71,7 +71,8 @@ RewriteRule ^(/)$ Target [QSA,R=301]
 
 # Make sure that Circle friendly URL without an RID will not get 404
 
-Parameters: * Friendly URL WITHOUT path
+Parameters: 
+* Friendly URL WITHOUT path
 * Path in friendly URL
 * Path to fallback page, when there is no RID eg. http://127.0.0.1/{websitefolder}/index.html
 
@@ -92,7 +93,8 @@ RewriteRule ^/Path/$ Fallback [NC,L,P,QSA]
 # Handling uStoreWSAPI in general way
 
 Veracore (Pro-mail) integration if uStore behind firewall
-Paramters:
+
+Parameters:
 * Domain
 * Internal uStore IP address
 
@@ -166,7 +168,8 @@ RewriteProxy /ustoreupdate(.*)$ https://domain/ustoreupdate/$1 [NC,U]
 
 This is useful when uEdit is in use, since uEdit does not work with sub-domains
 
-Parameter: Domain
+Parameter: 
+* Domain
 
 ```
 #----------------------------#
