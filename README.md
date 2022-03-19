@@ -1,3 +1,34 @@
+# ServerFeature.xml
+
+Run in PowerShell as an admin:
+```powershell
+Import-Module Servermanager
+```
+and then adjust the following line to your path and file:
+```powershell
+Import-Clixml D:\XMPie-install\utilities\ServerFeatures.xml | Add-WindowsFeature
+```
+
+
+# For migration
+
+Stop all services:
+```powershell
+stop-service msmq, xmp* -force;iisreset /stop;kill -name indesign*
+```
+
+Robocopy mirror all files:
+```powershell
+Robocopy "Source" "Destination" /MIR /XJD /R:5 /W:15 /MT:32 /V /NP /LOG:Backup.log;exit
+```
+
+Export and Import IIS applications
+(edit the XML file to remove unwanted apps and adjust the drive letter)
+```powershell
+%windir%\system32\inetsrv\appcmd list app /config /xml > C:\temp\apps.xml
+%windir%\system32\inetsrv\appcmd add app /in < C:\Temp\apps.xml
+```
+
 # HELICON ISAPI
 
 # Redirect XMPie interfaces from Proxy to Application server
