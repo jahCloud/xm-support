@@ -1,0 +1,24 @@
+Force SSL on XMPie Interfaces
+#-----------------------------------------------------#
+# Force HTTPS on XMPie Interfaces                     #
+#-----------------------------------------------------#
+
+RewriteCond %{HTTP:Host} (.*)
+RewriteCond %{HTTPS} off
+RewriteCond %{REQUEST_URI} /ustoreadmin(.*)$ [NC]
+RewriteRule .? https://%1/ustoreadmin [NC,R=301]
+
+RewriteCond %{HTTP:Host} (.*)
+RewriteCond %{HTTPS} off
+RewriteCond %{REQUEST_URI} /xmpiedashboard(.*)$ [NC]
+RewriteRule .? https://%1/xmpiedashboard [NC,R=301]
+
+RewriteCond %{HTTP:Host} (.*)
+RewriteCond %{HTTPS} off
+RewriteCond %{REQUEST_URI} /xmpiewsapi(.*)$ [NC]
+RewriteRule .? https://%1/xmpiewsapi [NC,R=301]
+
+RewriteCond %{HTTP:Host} (.*)
+RewriteCond %{HTTPS} off
+RewriteCond %{REQUEST_URI} /marketingconsole(.*)$ [NC]
+RewriteRule .? https://%1/marketingconsole [NC,R=301]
