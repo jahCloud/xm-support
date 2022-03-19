@@ -1,0 +1,33 @@
+#------------------------------------------------------------#
+# redirecting XMPie interfaces to: mika.com                  #
+#------------------------------------------------------------#
+
+#redirecting XMPieDashboard to mika.com
+RewriteCond %{HTTP:Host} (.*)
+RewriteCond %{HTTPS} off
+RewriteProxy /XMPieDashboard(.*)$ http://mika.com/XMPieDashboard/$1 [NC,U]
+
+#redirecting SSL XMPieDashboard to mika.com
+RewriteCond %{HTTP:Host} (.*)
+RewriteCond %{HTTPS} on
+RewriteProxy /XMPieDashboard(.*)$ https://mika.com/XMPieDashboard/$1 [NC,U]
+
+#redirecting uStoreAdmin to mika.com
+RewriteCond %{HTTP:Host} (.*)
+RewriteCond %{HTTPS} off
+RewriteProxy /uStoreAdmin(.*)$ http://mika.com/uStoreAdmin/$1 [NC,U]
+
+#redirecting SSL uStoreAdmin to mika.com
+RewriteCond %{HTTP:Host} (.*)
+RewriteCond %{HTTPS} on
+RewriteProxy /uStoreAdmin(.*)$ https://mika.com/uStoreAdmin/$1 [NC,U]
+
+#redirecting MarketingConsole to mika.com
+RewriteCond %{HTTP:Host} (.*)
+RewriteCond %{HTTPS} off
+RewriteProxy /MarketingConsole(.*)$ http://mika.com/MarketingConsole/$1 [NC,U]
+
+#redirecting SSL MarketingConsole to mika.com
+RewriteCond %{HTTP:Host} (.*)
+RewriteCond %{HTTPS} on
+RewriteProxy /MarketingConsole(.*)$ http://mika.com/MarketingConsole/$1 [NC,U]
