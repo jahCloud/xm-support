@@ -71,8 +71,7 @@ RewriteRule ^(/)$ Target [QSA,R=301]
 
 # Make sure that Circle friendly URL without an RID will not get 404
 
-Parameters: 
-* Friendly URL WITHOUT path
+Parameters: * Friendly URL WITHOUT path
 * Path in friendly URL
 * Path to fallback page, when there is no RID eg. http://127.0.0.1/{websitefolder}/index.html
 
@@ -166,6 +165,7 @@ RewriteProxy /ustoreupdate(.*)$ https://domain/ustoreupdate/$1 [NC,U]
 # Add WWW to a specific domain
 
 This is useful when uEdit is in use, since uEdit does not work with sub-domains
+
 Parameter: Domain
 
 ```
@@ -184,6 +184,7 @@ RewriteRule .? http(?%1s)://www.%2%3 [R=301,L]
 # Remove WWW from a specific domain
 
 It is sometimes needed in order to get a PURL to work.
+
 Parameters:
 * Domain without www
 * Target should always be in SSL?
